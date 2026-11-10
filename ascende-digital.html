@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090a0d">
+  <meta name="description" content="Ascende Digital cria sites profissionais, landing pages e lojas virtuais para empresas que querem crescer e conquistar clientes na internet.">
+  <meta property="og:title" content="Ascende Digital | Sua marca merece crescer">
+  <meta property="og:description" content="Sites profissionais que valorizam sua marca e transformam visitantes em oportunidades.">
+  <meta property="og:type" content="website">
+  <title>Ascende Digital | Sua marca merece crescer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#090a0d;
+      --bg2:#101116;
+      --panel:#15171d;
+      --gold:#e7b94f;
+      --gold2:#f5d887;
+      --white:#f7f7f5;
+      --muted:#a5a6ad;
+      --line:#ffffff16;
+      --green:#20bd79;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;background:var(--bg);color:var(--white);font-family:"DM Sans",sans-serif}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit;cursor:pointer}
+    .wrap{width:min(1160px,calc(100% - 44px));margin:auto}
+
+    /* Announcement */
+    .announcement{background:#111217;border-bottom:1px solid var(--line);font-size:12px;color:#c9c9cc}
+    .announcement .wrap{display:flex;justify-content:center;gap:9px;padding:9px 0}
+    .live{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold);animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+
+    /* Header */
+    header{height:82px;position:sticky;top:0;z-index:30;background:#090a0deF;backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .brand{display:flex;align-items:center;gap:10px;min-width:190px}
+    .brand img{width:185px;height:65px;object-fit:contain;object-position:left center}
+    .links{display:flex;align-items:center;gap:29px;font-size:13px;color:#c7c7cb;font-weight:600}
+    .links a:hover{color:var(--gold2)}
+    .nav-cta,.btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border:1px solid var(--gold);background:var(--gold);color:#16130b;
+      padding:14px 20px;border-radius:8px;font-size:13px;font-weight:800;
+      transition:.25s;box-shadow:0 8px 28px #e7b94f1c
+    }
+    .nav-cta:hover,.btn:hover{transform:translateY(-2px);background:var(--gold2);box-shadow:0 12px 32px #e7b94f30}
+    .menu-toggle{display:none;background:none;border:1px solid var(--line);color:white;border-radius:8px;padding:9px}
+
+    /* Hero */
+    .hero{position:relative;overflow:hidden;padding:92px 0 80px;background:radial-gradient(ellipse at 78% 45%,#6b4a171c 0,transparent 38%),linear-gradient(115deg,#090a0d 0%,#101116 58%,#0b0c10 100%)}
+    .hero:before{content:"";position:absolute;width:650px;height:650px;border:1px solid #e7b94f16;border-radius:50%;right:-230px;top:-240px;box-shadow:0 0 0 70px #e7b94f08,0 0 0 140px #e7b94f05}
+    .hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.45}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:50px}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold2);font-size:11px;text-transform:uppercase;letter-spacing:2.2px;font-weight:800}
+    .eyebrow:before{content:"";width:27px;height:1px;background:var(--gold)}
+    h1,h2,h3{font-family:Manrope,sans-serif}
+    h1{font-size:clamp(42px,5.1vw,67px);line-height:1.04;letter-spacing:-3px;margin:21px 0 20px;font-weight:800}
+    h1 em{font-style:normal;color:var(--gold)}
+    .hero-copy>p{font-size:16px;line-height:1.8;color:#b7b8bd;max-width:560px;margin:0 0 29px}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+    .btn-outline{background:transparent;color:#f1f1ef;border-color:#ffffff38;box-shadow:none}
+    .btn-outline:hover{background:#ffffff0c;border-color:var(--gold);color:var(--gold2)}
+    .microproof{display:flex;gap:23px;flex-wrap:wrap;margin-top:30px;color:#b9bac0;font-size:12px}
+    .microproof span{display:flex;align-items:center;gap:7px}
+    .tick{color:var(--gold);font-weight:900}
+
+    .hero-art{min-height:430px;position:relative;display:grid;place-items:center}
+    .orbit{position:absolute;width:390px;height:390px;border:1px solid #e7b94f22;border-radius:50%;box-shadow:0 0 70px #e7b94f0b,inset 0 0 70px #e7b94f08}
+    .orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #e7b94f1c;border-radius:50%;inset:35px}
+    .orbit:after{inset:78px}
+    .mock-window{position:relative;z-index:2;width:min(440px,100%);background:#171920;border:1px solid #ffffff25;border-radius:15px;overflow:hidden;box-shadow:0 35px 90px #000b;transform:perspective(1000px) rotateY(-8deg) rotateX(3deg)}
+    .window-bar{height:34px;background:#22242b;display:flex;align-items:center;padding:0 13px;gap:6px}
+    .window-bar i{width:7px;height:7px;border-radius:50%;background:#777}
+    .window-content{padding:23px 24px 25px;background:linear-gradient(140deg,#1a1c23,#0e1015)}
+    .mock-brand{font:800 12px Manrope;letter-spacing:1px;color:#f6f6f3}
+    .mock-brand b{color:var(--gold)}
+    .mock-title{font:800 28px/1.15 Manrope;margin:34px 0 10px}
+    .mock-title span{color:var(--gold)}
+    .mock-desc{color:#a7a8af;font-size:10px;line-height:1.6;max-width:230px}
+    .mock-button{margin-top:18px;width:105px;padding:9px;border-radius:4px;background:var(--gold);color:#17130a;font-size:9px;font-weight:800;text-align:center}
+    .mock-bars{height:95px;display:flex;align-items:end;gap:9px;position:absolute;right:25px;bottom:28px}
+    .mock-bars i{display:block;width:21px;background:linear-gradient(0deg,#946b22,var(--gold));border-radius:3px 3px 0 0;box-shadow:0 0 20px #e7b94f22}
+    .mock-bars i:nth-child(1){height:30%}
+    .mock-bars i:nth-child(2){height:47%}
+    .mock-bars i:nth-child(3){height:65%}
+    .mock-bars i:nth-child(4){height:82%}
+    .mock-bars i:nth-child(5){height:100%}
+    .floating-tag{position:absolute;z-index:3;bottom:27px;left:0;background:#1a1c22;border:1px solid #ffffff20;border-radius:10px;padding:13px 16px;box-shadow:0 15px 40px #0008}
+    .floating-tag strong{display:block;color:var(--gold);font:800 18px Manrope}
+    .floating-tag small{font-size:10px;color:#b9bac0}
+
+    /* Metrics */
+    .metrics{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0d0e12}
+    .metrics-grid{display:grid;grid-template-columns:repeat(3,1fr);padding:22px 0}
+    .metric{display:flex;align-items:center;justify-content:center;gap:12px;border-right:1px solid var(--line)}
+    .metric:last-child{border:0}
+    .metric b{font:800 13px Manrope}
+    .metric small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+    .metric-icon{width:36px;height:36px;border:1px solid #e7b94f55;color:var(--gold);display:grid;place-items:center;border-radius:10px;font-size:16px}
+
+    /* Sections */
+    section{padding:88px 0}
+    .section-top{text-align:center;max-width:690px;margin:0 auto 42px}
+    .kicker{font-size:10px;color:var(--gold);letter-spacing:2.3px;text-transform:uppercase;font-weight:800}
+    .section-top h2{font-size:clamp(29px,3.6vw,43px);line-height:1.16;letter-spacing:-1.5px;margin:13px 0}
+    .section-top p{color:var(--muted);font-size:14px;line-height:1.8;margin:0}
+
+    /* Portfolio */
+    .portfolio{background:#0d0e12}
+    .portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .project{
+      background:var(--panel);border:1px solid var(--line);border-radius:14px;
+      overflow:hidden;transition:.3s cubic-bezier(.2,.8,.2,1);cursor:pointer;position:relative
+    }
+    .project:hover{
+      transform:translateY(-8px);
+      border-color:#e7b94f88;
+      box-shadow:0 25px 60px #0008,0 0 0 1px #e7b94f22
+    }
+    .project:active{transform:translateY(-4px)}
+    .project-preview{height:245px;padding:19px;background:linear-gradient(135deg,#242630,#111217);position:relative;overflow:hidden}
+    .project-preview:after{content:"";position:absolute;width:240px;height:240px;border:1px solid #ffffff13;border-radius:50%;right:-70px;top:-100px;box-shadow:0 0 0 30px #ffffff08}
+    .browser{height:100%;position:relative;z-index:1;background:#f5f4f0;color:#20232a;border-radius:7px;overflow:hidden;box-shadow:0 15px 35px #0006}
+    .browser-head{height:23px;background:#e4e3df;display:flex;align-items:center;gap:4px;padding:0 9px}
+    .browser-head i{width:5px;height:5px;background:#aaa;border-radius:50%}
+    .site-demo{height:calc(100% - 23px);padding:17px 19px;position:relative}
+    .demo-nav{display:flex;justify-content:space-between;align-items:center;font-size:8px;font-weight:800}
+    .demo-nav span:last-child{background:#20232a;color:white;padding:6px 9px;border-radius:3px}
+    .demo-title{font:800 24px/1.05 Manrope;max-width:250px;margin:26px 0 7px}
+    .demo-sub{font-size:8px;color:#777;max-width:220px}
+    .demo-cta{display:inline-block;margin-top:13px;padding:7px 10px;background:#20232a;color:#fff;font-size:7px;border-radius:3px}
+    .demo-shape{position:absolute;right:28px;bottom:24px;width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,#d7b15e,#76531e);opacity:.85}
+
+    /* Project color variants */
+    .project:nth-child(2) .project-preview{background:linear-gradient(135deg,#0b3538,#0b171a)}
+    .project:nth-child(2) .browser{background:#f4f7f5}
+    .project:nth-child(2) .demo-title{color:#0d625e}
+    .project:nth-child(2) .demo-shape{background:linear-gradient(135deg,#9fe1d2,#168b7e);border-radius:12px 50% 12px 50%}
+    .project:nth-child(3) .project-preview{background:linear-gradient(135deg,#24202c,#111018)}
+    .project:nth-child(3) .browser{background:#171622;color:white}
+    .project:nth-child(3) .browser-head{background:#292735}
+    .project:nth-child(3) .demo-title{color:#fff}
+    .project:nth-child(3) .demo-sub{color:#b3b0bd}
+    .project:nth-child(3) .demo-cta{background:#8e5cc4}
+    .project:nth-child(3) .demo-shape{background:linear-gradient(135deg,#d5a9f6,#7143a1);border-radius:50% 50% 5px 5px}
+    .project:nth-child(4) .project-preview{background:linear-gradient(135deg,#18283b,#0b111c)}
+    .project:nth-child(4) .browser{background:#f2f5f9}
+    .project:nth-child(4) .demo-title{color:#17365b}
+    .project:nth-child(4) .demo-cta{background:#1d5b9e}
+    .project:nth-child(4) .demo-shape{background:linear-gradient(135deg,#83b9ee,#1d5b9e);border-radius:10px}
+
+    .project-info{padding:19px 21px 21px}
+    .project-meta{display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .project-info h3{font-size:17px;margin:0}
+    .tag{font-size:9px;color:var(--gold2);border:1px solid #e7b94f45;border-radius:30px;padding:6px 9px}
+    .project-info p{font-size:12px;line-height:1.7;color:var(--muted);margin:9px 0 0}
+    .project-cta{
+      display:inline-flex;align-items:center;gap:6px;margin-top:14px;
+      font-size:11px;font-weight:700;color:var(--gold2);opacity:0;transform:translateY(6px);
+      transition:.3s
+    }
+    .project:hover .project-cta{opacity:1;transform:translateY(0)}
+    .demo-note{text-align:center;color:#777982;font-size:10px;margin-top:20px}
+
+    /* Services */
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .service{background:linear-gradient(145deg,#171920,#101116);border:1px solid var(--line);border-radius:12px;padding:24px;min-height:205px;transition:.25s}
+    .service:hover{border-color:#e7b94f44;transform:translateY(-3px)}
+    .service-icon{width:42px;height:42px;border:1px solid #e7b94f55;color:var(--gold);border-radius:10px;display:grid;place-items:center;font-size:19px;margin-bottom:19px}
+    .service h3{font-size:16px;margin:0 0 9px}
+    .service p{font-size:12px;line-height:1.75;color:var(--muted);margin:0}
+
+    /* Process */
+    .process{background:#0d0e12}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .step{padding:23px 19px;border-top:1px solid #e7b94f70;background:linear-gradient(180deg,#171920,#101116)}
+    .step-num{color:var(--gold);font:800 12px Manrope}
+    .step h3{font-size:15px;margin:15px 0 8px}
+    .step p{font-size:11px;line-height:1.7;color:var(--muted);margin:0}
+
+    /* CTA */
+    .cta-section{padding:80px 0}
+    .cta-panel{position:relative;overflow:hidden;border:1px solid #e7b94f60;border-radius:18px;padding:55px 50px;background:radial-gradient(ellipse at 100% 0%,#9b711d38,transparent 48%),linear-gradient(110deg,#1a1a1c,#111217)}
+    .cta-panel:after{content:"A";position:absolute;right:25px;top:-115px;font:800 340px Manrope;color:#e7b94f09;pointer-events:none}
+    .cta-content{position:relative;z-index:1;max-width:690px}
+    .cta-panel h2{font-size:clamp(30px,4vw,45px);line-height:1.13;letter-spacing:-1.4px;margin:13px 0}
+    .cta-panel h2 em{color:var(--gold);font-style:normal}
+    .cta-panel p{color:#b5b5ba;font-size:14px;line-height:1.8;max-width:590px;margin:0 0 25px}
+    .cta-panel .btn{font-size:14px;padding:16px 22px}
+    .contact-line{margin-top:17px;color:#9c9da4;font-size:11px}
+    .contact-line a{color:var(--gold2)}
+
+    /* Footer */
+    footer{background:#07080a;border-top:1px solid var(--line);padding:38px 0 22px}
+    .footer-main{display:flex;justify-content:space-between;gap:30px;align-items:flex-start;padding-bottom:27px}
+    .footer-logo img{width:190px;height:70px;object-fit:contain;object-position:left center}
+    .footer-logo p{font-size:11px;line-height:1.7;color:#888a92;max-width:280px}
+    .footer-links{display:flex;gap:35px}
+    .footer-col b{font:700 11px Manrope;color:#eee}
+    .footer-col a{display:block;color:#92939a;font-size:11px;margin-top:12px}
+    .footer-col a:hover{color:var(--gold)}
+    .copyright{border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:#6f7078;font-size:10px}
+
+    /* WhatsApp */
+    .whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:40;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:white;box-shadow:0 8px 30px #20bd7955;transition:.2s}
+    .whatsapp-float:hover{transform:translateY(-4px) scale(1.04)}
+    .whatsapp-float svg{width:28px;height:28px;fill:currentColor}
+
+    /* ===================== MODAL / FLOATING WINDOW ===================== */
+    .modal-overlay{
+      position:fixed;inset:0;z-index:100;
+      background:rgba(5,6,10,.82);
+      backdrop-filter:blur(12px);
+      display:flex;align-items:center;justify-content:center;
+      opacity:0;visibility:hidden;
+      transition:opacity .35s ease, visibility .35s ease;
+      padding:20px;
+    }
+    .modal-overlay.active{opacity:1;visibility:visible}
+
+    .modal-window{
+      width:min(920px,100%);
+      height:min(860px,92vh);
+      background:#0f1117;
+      border:1px solid #ffffff22;
+      border-radius:16px;
+      overflow:hidden;
+      display:flex;flex-direction:column;
+      box-shadow:0 40px 120px #000c,0 0 0 1px #e7b94f18;
+      transform:scale(.92) translateY(30px);
+      transition:transform .4s cubic-bezier(.2,.8,.2,1);
+      position:relative;
+    }
+    .modal-overlay.active .modal-window{transform:scale(1) translateY(0)}
+
+    /* Modal header (browser chrome) */
+    .modal-chrome{
+      height:48px;min-height:48px;
+      background:linear-gradient(180deg,#1c1e26,#16181f);
+      border-bottom:1px solid #ffffff12;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 16px 0 14px;
+      gap:12px;
+    }
+    .modal-dots{display:flex;gap:7px}
+    .modal-dots span{
+      width:11px;height:11px;border-radius:50%;
+      transition:.2s;
+    }
+    .modal-dots span:nth-child(1){background:#ff5f57}
+    .modal-dots span:nth-child(2){background:#febc2e}
+    .modal-dots span:nth-child(3){background:#28c840}
+    .modal-dots span:hover{filter:brightness(1.15)}
+
+    .modal-url{
+      flex:1;max-width:420px;
+      background:#0c0d12;
+      border:1px solid #ffffff14;
+      border-radius:8px;
+      height:30px;
+      display:flex;align-items:center;gap:8px;
+      padding:0 12px;
+      font-size:12px;color:#9a9ba3;
+    }
+    .modal-url svg{width:13px;height:13px;opacity:.6;flex-shrink:0}
+    .modal-url span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+    .modal-close{
+      width:34px;height:34px;border-radius:8px;
+      background:transparent;border:1px solid transparent;
+      color:#c5c5c9;display:grid;place-items:center;
+      transition:.2s;font-size:18px;line-height:1;
+    }
+    .modal-close:hover{
+      background:#ffffff12;border-color:#ffffff20;color:#fff;
+    }
+
+    /* Scrollable site content */
+    .modal-body{
+      flex:1;overflow-y:auto;overflow-x:hidden;
+      background:#f8f7f4;
+      scrollbar-width:thin;
+      scrollbar-color:#c5c0b5 transparent;
+    }
+    .modal-body::-webkit-scrollbar{width:8px}
+    .modal-body::-webkit-scrollbar-track{background:transparent}
+    .modal-body::-webkit-scrollbar-thumb{background:#c5c0b5;border-radius:10px}
+    .modal-body::-webkit-scrollbar-thumb:hover{background:#a8a39a}
+
+    /* Shared mock site styles inside modal */
+    .mock-site{min-height:100%;font-family:"DM Sans",sans-serif;color:#1a1c22}
+    .mock-site *{box-sizing:border-box}
+
+    /* ========== SITE 1: VÉRTICE IMÓVEIS ========== */
+    .site-imob .ms-nav{
+      background:#fff;border-bottom:1px solid #e8e6e1;
+      padding:18px 40px;display:flex;align-items:center;justify-content:space-between;
+      position:sticky;top:0;z-index:5;
+    }
+    .site-imob .ms-logo{font:800 15px Manrope;letter-spacing:.5px;color:#1a1c22}
+    .site-imob .ms-logo span{color:#b8860b}
+    .site-imob .ms-links{display:flex;gap:28px;font-size:12px;font-weight:600;color:#555}
+    .site-imob .ms-cta{
+      background:#1a1c22;color:#fff;padding:10px 18px;border-radius:6px;
+      font-size:11px;font-weight:700
+    }
+    .site-imob .ms-hero{
+      padding:70px 40px 60px;
+      background:linear-gradient(135deg,#faf8f4 0%,#f0ebe3 100%);
+      display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;
+    }
+    .site-imob .ms-hero h1{
+      font:800 42px/1.1 Manrope;margin:0 0 16px;letter-spacing:-1.5px;color:#1a1c22
+    }
+    .site-imob .ms-hero p{font-size:15px;line-height:1.7;color:#666;margin:0 0 28px;max-width:420px}
+    .site-imob .ms-btn{
+      display:inline-block;background:#1a1c22;color:#fff;
+      padding:14px 26px;border-radius:7px;font-size:13px;font-weight:700
+    }
+    .site-imob .ms-hero-card{
+      background:#fff;border-radius:14px;overflow:hidden;
+      box-shadow:0 20px 50px #0001;border:1px solid #eee
+    }
+    .site-imob .ms-hero-img{
+      height:200px;background:linear-gradient(135deg,#d4c4a8,#8a7a5c);
+      display:grid;place-items:center;color:#fff;font:700 14px Manrope
+    }
+    .site-imob .ms-hero-info{padding:18px 20px}
+    .site-imob .ms-hero-info strong{display:block;font:700 16px Manrope;margin-bottom:4px}
+    .site-imob .ms-hero-info span{font-size:12px;color:#888}
+    .site-imob .ms-section{padding:55px 40px}
+    .site-imob .ms-section h2{font:800 26px Manrope;margin:0 0 8px;letter-spacing:-.5px}
+    .site-imob .ms-section > p{color:#777;font-size:14px;margin:0 0 30px}
+    .site-imob .ms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .site-imob .ms-card{
+      background:#fff;border:1px solid #ebe8e2;border-radius:12px;overflow:hidden
+    }
+    .site-imob .ms-card-img{height:140px;background:linear-gradient(135deg,#c9b89a,#7a6a4e)}
+    .site-imob .ms-card-img.t2{background:linear-gradient(135deg,#b8c4c9,#5a6a72)}
+    .site-imob .ms-card-img.t3{background:linear-gradient(135deg,#c9c0b0,#6a5f50)}
+    .site-imob .ms-card-body{padding:16px}
+    .site-imob .ms-card-body strong{display:block;font:700 14px Manrope;margin-bottom:4px}
+    .site-imob .ms-card-body span{font-size:12px;color:#888}
+    .site-imob .ms-price{margin-top:10px;font:800 15px Manrope;color:#b8860b}
+    .site-imob .ms-footer{
+      background:#1a1c22;color:#aaa;padding:40px;text-align:center;font-size:12px
+    }
+    .site-imob .ms-footer strong{color:#fff;display:block;margin-bottom:6px;font:700 14px Manrope}
+
+    /* ========== SITE 2: CLÍNICA VIVA ========== */
+    .site-clinica .ms-nav{
+      background:#fff;border-bottom:1px solid #e0ebe8;
+      padding:16px 40px;display:flex;align-items:center;justify-content:space-between;
+      position:sticky;top:0;z-index:5
+    }
+    .site-clinica .ms-logo{font:800 15px Manrope;color:#0d625e}
+    .site-clinica .ms-links{display:flex;gap:24px;font-size:12px;font-weight:600;color:#555}
+    .site-clinica .ms-cta{
+      background:#0d625e;color:#fff;padding:10px 18px;border-radius:30px;
+      font-size:11px;font-weight:700
+    }
+    .site-clinica .ms-hero{
+      padding:70px 40px;
+      background:linear-gradient(160deg,#eef8f6 0%,#d8efe9 100%);
+      text-align:center
+    }
+    .site-clinica .ms-hero h1{
+      font:800 40px/1.15 Manrope;margin:0 0 16px;color:#0a4a47;letter-spacing:-1.2px
+    }
+    .site-clinica .ms-hero p{font-size:15px;color:#4a6b68;max-width:480px;margin:0 auto 28px;line-height:1.7}
+    .site-clinica .ms-btn{
+      display:inline-block;background:#0d625e;color:#fff;
+      padding:14px 28px;border-radius:30px;font-size:13px;font-weight:700
+    }
+    .site-clinica .ms-section{padding:55px 40px;background:#fff}
+    .site-clinica .ms-section h2{font:800 26px Manrope;margin:0 0 8px;color:#0a4a47;text-align:center}
+    .site-clinica .ms-section > p{color:#777;font-size:14px;margin:0 auto 32px;text-align:center;max-width:420px}
+    .site-clinica .ms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .site-clinica .ms-card{
+      background:#f4faf8;border:1px solid #d8ebe6;border-radius:14px;padding:24px;text-align:center
+    }
+    .site-clinica .ms-icon{
+      width:48px;height:48px;border-radius:50%;background:#0d625e;color:#fff;
+      display:grid;place-items:center;margin:0 auto 14px;font-size:18px
+    }
+    .site-clinica .ms-card strong{display:block;font:700 14px Manrope;margin-bottom:6px;color:#0a4a47}
+    .site-clinica .ms-card span{font-size:12px;color:#666;line-height:1.5}
+    .site-clinica .ms-cta-block{
+      padding:50px 40px;background:#0d625e;color:#fff;text-align:center
+    }
+    .site-clinica .ms-cta-block h2{font:800 28px Manrope;margin:0 0 12px}
+    .site-clinica .ms-cta-block p{opacity:.85;margin:0 0 22px;font-size:14px}
+    .site-clinica .ms-cta-block .ms-btn{background:#fff;color:#0d625e}
+    .site-clinica .ms-footer{background:#083d3a;color:#8ab5b1;padding:30px;text-align:center;font-size:12px}
+
+    /* ========== SITE 3: ATELIÊ AURA ========== */
+    .site-loja .ms-nav{
+      background:#171622;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;
+      position:sticky;top:0;z-index:5
+    }
+    .site-loja .ms-logo{font:800 15px Manrope;color:#fff;letter-spacing:1px}
+    .site-loja .ms-logo span{color:#c9a0f0}
+    .site-loja .ms-links{display:flex;gap:24px;font-size:12px;font-weight:600;color:#b3b0bd}
+    .site-loja .ms-cta{
+      background:#8e5cc4;color:#fff;padding:10px 18px;border-radius:6px;
+      font-size:11px;font-weight:700
+    }
+    .site-loja .ms-hero{
+      padding:80px 40px;background:linear-gradient(145deg,#1e1b2a 0%,#12101a 100%);
+      color:#fff;text-align:center
+    }
+    .site-loja .ms-hero h1{
+      font:800 42px/1.1 Manrope;margin:0 0 16px;letter-spacing:-1.5px
+    }
+    .site-loja .ms-hero h1 span{color:#c9a0f0}
+    .site-loja .ms-hero p{font-size:15px;color:#a8a4b5;max-width:420px;margin:0 auto 28px;line-height:1.7}
+    .site-loja .ms-btn{
+      display:inline-block;background:#8e5cc4;color:#fff;
+      padding:14px 28px;border-radius:6px;font-size:13px;font-weight:700
+    }
+    .site-loja .ms-section{padding:55px 40px;background:#f7f5fa}
+    .site-loja .ms-section h2{font:800 26px Manrope;margin:0 0 8px;color:#1a1525;text-align:center}
+    .site-loja .ms-section > p{color:#777;font-size:14px;margin:0 auto 32px;text-align:center}
+    .site-loja .ms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .site-loja .ms-card{
+      background:#fff;border-radius:12px;overflow:hidden;border:1px solid #ebe6f0
+    }
+    .site-loja .ms-card-img{height:160px;background:linear-gradient(135deg,#d5a9f6,#7143a1)}
+    .site-loja .ms-card-img.t2{background:linear-gradient(135deg,#f0c4e8,#9b5a9e)}
+    .site-loja .ms-card-img.t3{background:linear-gradient(135deg,#c4b0f0,#5a4a9e)}
+    .site-loja .ms-card-body{padding:16px}
+    .site-loja .ms-card-body strong{display:block;font:700 14px Manrope;margin-bottom:4px;color:#1a1525}
+    .site-loja .ms-card-body span{font-size:12px;color:#888}
+    .site-loja .ms-price{margin-top:8px;font:800 15px Manrope;color:#8e5cc4}
+    .site-loja .ms-footer{background:#12101a;color:#7a7588;padding:35px;text-align:center;font-size:12px}
+
+    /* ========== SITE 4: ALTA PERFORMANCE ========== */
+    .site-serv .ms-nav{
+      background:#fff;border-bottom:1px solid #e2e8f0;
+      padding:16px 40px;display:flex;align-items:center;justify-content:space-between;
+      position:sticky;top:0;z-index:5
+    }
+    .site-serv .ms-logo{font:800 14px Manrope;color:#17365b;letter-spacing:.3px}
+    .site-serv .ms-links{display:flex;gap:24px;font-size:12px;font-weight:600;color:#555}
+    .site-serv .ms-cta{
+      background:#1d5b9e;color:#fff;padding:10px 18px;border-radius:6px;
+      font-size:11px;font-weight:700
+    }
+    .site-serv .ms-hero{
+      padding:70px 40px;
+      background:linear-gradient(135deg,#eef4fb 0%,#d6e4f5 100%);
+      display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center
+    }
+    .site-serv .ms-hero h1{
+      font:800 38px/1.12 Manrope;margin:0 0 16px;color:#0f2a4a;letter-spacing:-1.2px
+    }
+    .site-serv .ms-hero p{font-size:15px;color:#4a5f78;margin:0 0 26px;line-height:1.7;max-width:400px}
+    .site-serv .ms-btn{
+      display:inline-block;background:#1d5b9e;color:#fff;
+      padding:14px 26px;border-radius:7px;font-size:13px;font-weight:700
+    }
+    .site-serv .ms-hero-visual{
+      height:240px;background:linear-gradient(145deg,#1d5b9e,#0f3a6a);
+      border-radius:16px;display:grid;place-items:center;color:#fff;
+      font:800 18px Manrope;box-shadow:0 25px 50px #1d5b9e33
+    }
+    .site-serv .ms-section{padding:55px 40px;background:#fff}
+    .site-serv .ms-section h2{font:800 26px Manrope;margin:0 0 8px;color:#0f2a4a;text-align:center}
+    .site-serv .ms-section > p{color:#777;font-size:14px;margin:0 auto 32px;text-align:center;max-width:400px}
+    .site-serv .ms-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .site-serv .ms-card{
+      background:#f4f8fc;border:1px solid #d6e4f0;border-radius:12px;padding:22px
+    }
+    .site-serv .ms-card strong{display:block;font:700 15px Manrope;margin-bottom:6px;color:#0f2a4a}
+    .site-serv .ms-card span{font-size:13px;color:#5a6f88;line-height:1.55}
+    .site-serv .ms-cta-block{
+      padding:50px 40px;background:#0f2a4a;color:#fff;text-align:center
+    }
+    .site-serv .ms-cta-block h2{font:800 28px Manrope;margin:0 0 12px}
+    .site-serv .ms-cta-block p{opacity:.8;margin:0 0 22px;font-size:14px}
+    .site-serv .ms-cta-block .ms-btn{background:#fff;color:#0f2a4a}
+    .site-serv .ms-footer{background:#0a1e36;color:#7a93b0;padding:30px;text-align:center;font-size:12px}
+
+    /* Responsive modal */
+    @media(max-width:700px){
+      .modal-window{height:95vh;border-radius:12px}
+      .modal-url{display:none}
+      .site-imob .ms-hero,
+      .site-serv .ms-hero{grid-template-columns:1fr;gap:30px}
+      .site-imob .ms-grid,
+      .site-clinica .ms-grid,
+      .site-loja .ms-grid{grid-template-columns:1fr}
+      .site-serv .ms-grid{grid-template-columns:1fr}
+      .site-imob .ms-nav,
+      .site-clinica .ms-nav,
+      .site-loja .ms-nav,
+      .site-serv .ms-nav{padding:14px 20px}
+      .site-imob .ms-hero,
+      .site-clinica .ms-hero,
+      .site-loja .ms-hero,
+      .site-serv .ms-hero,
+      .site-imob .ms-section,
+      .site-clinica .ms-section,
+      .site-loja .ms-section,
+      .site-serv .ms-section{padding:40px 20px}
+      .site-imob .ms-links,
+      .site-clinica .ms-links,
+      .site-loja .ms-links,
+      .site-serv .ms-links{display:none}
+    }
+
+    /* General responsive */
+    @media(max-width:900px){
+      .links{gap:17px}
+      .hero-grid{grid-template-columns:1fr .85fr;gap:25px}
+      .hero-art{min-height:350px}
+      .orbit{width:310px;height:310px}
+      .mock-title{font-size:23px}
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:700px){
+      header{height:72px}
+      .brand img{width:160px;height:60px}
+      .links{display:none;position:absolute;top:71px;left:0;right:0;background:#101116;padding:20px 24px 25px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:19px}
+      .links.open{display:flex}
+      .nav-cta{margin-left:auto;padding:11px 12px;font-size:11px}
+      .menu-toggle{display:block}
+      .hero{padding:64px 0 50px}
+      .hero-grid{grid-template-columns:1fr}
+      .hero-art{min-height:320px;margin-top:15px}
+      .mock-window{max-width:430px}
+      .floating-tag{left:4px;bottom:3px}
+      .metrics-grid{grid-template-columns:1fr;gap:16px}
+      .metric{justify-content:flex-start;border-right:0;border-bottom:1px solid var(--line);padding-bottom:14px}
+      .metric:last-child{border:0;padding-bottom:0}
+      .portfolio-grid{grid-template-columns:1fr}
+      .project-preview{height:225px}
+      .steps{grid-template-columns:repeat(2,1fr)}
+      .footer-main{flex-direction:column}
+      .footer-links{width:100%;justify-content:space-between}
+      .cta-panel{padding:38px 25px}
+    }
+    @media(max-width:480px){
+      .wrap{width:calc(100% - 32px)}
+      h1{font-size:43px;letter-spacing:-2px}
+      .hero-copy>p{font-size:14px}
+      .hero-actions .btn{width:100%}
+      .microproof{gap:12px}
+      .hero-art{min-height:280px}
+      .orbit{width:260px;height:260px}
+      .mock-window{transform:none}
+      .mock-title{font-size:21px;margin-top:24px}
+      .mock-bars{transform:scale(.8);transform-origin:bottom right}
+      .floating-tag{padding:10px 12px}
+      .section-top{margin-bottom:30px}
+      .services-grid{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr 1fr}
+      .step{padding:17px 14px}
+      .footer-links{gap:14px}
+      .copyright{flex-direction:column}
+      .whatsapp-float{right:15px;bottom:15px;width:54px;height:54px}
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement"><div class="wrap"><span class="live"></span> Estratégia, presença e crescimento para sua marca no digital.</div></div>
+  <header><div class="wrap nav">
+    <a class="brand" href="#inicio" aria-label="Ascende Digital - início"><img src="ascende.png" alt="Logo Ascende Digital"></a>
+    <nav class="links" id="menu"><a href="#inicio">Início</a><a href="#portfolio">Portfólio</a><a href="#servicos">Soluções</a><a href="#processo">Como funciona</a><a href="#contato">Contato</a></nav>
+    <a class="nav-cta" href="https://wa.me/5583993110329?text=Ol%C3%A1%21%20Quero%20solicitar%20um%20or%C3%A7amento%20com%20a%20Ascende%20Digital." target="_blank" rel="noopener">Solicitar orçamento <span>↗</span></a>
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
+  </div></header>
+  <main>
+    <section class="hero" id="inicio"><div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Sua próxima evolução começa aqui</div>
+        <h1>Sua marca merece<br>ser vista. <em>Seu negócio</em><br><em>merece crescer.</em></h1>
+        <p>Criamos experiências digitais que valorizam sua empresa, fortalecem sua presença online e aproximam você dos seus próximos clientes.</p>
+        <div class="hero-actions">
+          <a class="btn" href="https://wa.me/5583993110329?text=Ol%C3%A1%21%20Quero%20tirar%20meu%20projeto%20do%20papel%20com%20a%20Ascende%20Digital." target="_blank" rel="noopener">VAMOS CRIAR MEU SITE <span>→</span></a>
+          <a class="btn btn-outline" href="#portfolio">Conhecer portfólio <span>↓</span></a>
+        </div>
+        <div class="microproof"><span><b class="tick">✓</b> Design profissional</span><span><b class="tick">✓</b> Adaptado para celular</span><span><b class="tick">✓</b> Atendimento direto</span></div>
+      </div>
+      <div class="hero-art" aria-label="Prévia ilustrativa de um site profissional">
+        <div class="orbit"></div>
+        <div class="mock-window"><div class="window-bar"><i></i><i></i><i></i></div><div class="window-content">
+          <div class="mock-brand">ASCENDE <b> DIGITAL</b></div>
+          <div class="mock-title">Sua empresa<br><span>em outro nível.</span></div>
+          <div class="mock-desc">Uma presença digital forte para marcas que querem conquistar espaço e crescer.</div>
+          <div class="mock-button">COMECE AGORA ↗</div>
+          <div class="mock-bars"><i></i><i></i><i></i><i></i><i></i></div>
+        </div></div>
+        <div class="floating-tag"><strong>+ PRESENÇA</strong><small>Uma marca mais forte começa online.</small></div>
+      </div>
+    </div></section>
+    <div class="metrics"><div class="wrap metrics-grid">
+      <div class="metric"><span class="metric-icon">✦</span><div><b>Visual que valoriza</b><small>Identidade profissional para sua marca</small></div></div>
+      <div class="metric"><span class="metric-icon">⌘</span><div><b>Experiência responsiva</b><small>Seu site em qualquer tela</small></div></div>
+      <div class="metric"><span class="metric-icon">↗</span><div><b>Foco no seu negócio</b><small>Estrutura pensada para gerar contatos</small></div></div>
+    </div></div>
+    <section class="portfolio" id="portfolio"><div class="wrap">
+      <div class="section-top"><div class="kicker">Ideias que ganham forma</div><h2>Um site certo muda a forma como <span style="color:var(--gold)">o mundo vê sua marca.</span></h2><p>Explore alguns conceitos visuais demonstrativos do que podemos desenvolver para diferentes tipos de negócio. Clique em qualquer projeto para ver a prévia completa.</p></div>
+      <div class="portfolio-grid">
+        <!-- Projeto 1 -->
+        <article class="project" data-project="imob" tabindex="0" role="button" aria-label="Abrir prévia do projeto Imobiliária">
+          <div class="project-preview"><div class="browser"><div class="browser-head"><i></i><i></i><i></i></div><div class="site-demo"><div class="demo-nav"><b>VÉRTICE IMÓVEIS</b><span>VER IMÓVEIS</span></div><div class="demo-title">Encontre o lugar<br>para chamar de seu.</div><div class="demo-sub">Imóveis selecionados para uma nova fase da sua vida.</div><span class="demo-cta">EXPLORAR IMÓVEIS →</span><div class="demo-shape"></div></div></div></div>
+          <div class="project-info">
+            <div class="project-meta"><h3>Imobiliária</h3><span class="tag">Institucional</span></div>
+            <p>Apresentação de imóveis, valorização da marca e canais de contato em destaque.</p>
+            <div class="project-cta">Ver projeto completo →</div>
+          </div>
+        </article>
+        <!-- Projeto 2 -->
+        <article class="project" data-project="clinica" tabindex="0" role="button" aria-label="Abrir prévia do projeto Clínica">
+          <div class="project-preview"><div class="browser"><div class="browser-head"><i></i><i></i><i></i></div><div class="site-demo"><div class="demo-nav"><b>CLÍNICA VIVA</b><span>AGENDAR</span></div><div class="demo-title">Cuidado e atenção<br>em cada detalhe.</div><div class="demo-sub">Conheça uma nova experiência em saúde e bem-estar.</div><span class="demo-cta">FALE COM A EQUIPE →</span><div class="demo-shape"></div></div></div></div>
+          <div class="project-info">
+            <div class="project-meta"><h3>Clínica e saúde</h3><span class="tag">Profissional</span></div>
+            <p>Design acolhedor, serviços organizados e caminho simples para agendamentos.</p>
+            <div class="project-cta">Ver projeto completo →</div>
+          </div>
+        </article>
+        <!-- Projeto 3 -->
+        <article class="project" data-project="loja" tabindex="0" role="button" aria-label="Abrir prévia do projeto Loja">
+          <div class="project-preview"><div class="browser"><div class="browser-head"><i></i><i></i><i></i></div><div class="site-demo"><div class="demo-nav"><b>ATELIÊ AURA</b><span>VER COLEÇÃO</span></div><div class="demo-title">Feito para marcar<br>presença.</div><div class="demo-sub">Uma vitrine digital para produtos com personalidade.</div><span class="demo-cta">CONHEÇA A MARCA →</span><div class="demo-shape"></div></div></div></div>
+          <div class="project-info">
+            <div class="project-meta"><h3>Loja e marca</h3><span class="tag">Vitrine digital</span></div>
+            <p>Apresentação de produtos com identidade visual marcante e navegação intuitiva.</p>
+            <div class="project-cta">Ver projeto completo →</div>
+          </div>
+        </article>
+        <!-- Projeto 4 -->
+        <article class="project" data-project="serv" tabindex="0" role="button" aria-label="Abrir prévia do projeto Serviços">
+          <div class="project-preview"><div class="browser"><div class="browser-head"><i></i><i></i><i></i></div><div class="site-demo"><div class="demo-nav"><b>ALTA PERFORMANCE</b><span>CONSULTAR</span></div><div class="demo-title">Seu próximo nível<br>começa com ação.</div><div class="demo-sub">Soluções e serviços apresentados com clareza e confiança.</div><span class="demo-cta">SOLICITAR PROPOSTA →</span><div class="demo-shape"></div></div></div></div>
+          <div class="project-info">
+            <div class="project-meta"><h3>Prestador de serviços</h3><span class="tag">Landing page</span></div>
+            <p>Página objetiva para apresentar uma oferta e transformar visitas em oportunidades.</p>
+            <div class="project-cta">Ver projeto completo →</div>
+          </div>
+        </article>
+      </div>
+      <div class="demo-note">* Os exemplos acima são conceitos demonstrativos. Clique em qualquer card para explorar a prévia completa com scroll.</div>
+    </div></section>
+    <section id="servicos"><div class="wrap">
+      <div class="section-top"><div class="kicker">Soluções digitais</div><h2>O que sua empresa precisa para <span style="color:var(--gold)">crescer online.</span></h2><p>Do primeiro contato à presença digital completa, desenvolvemos soluções com visual profissional, boa experiência e foco no objetivo do seu negócio.</p></div>
+      <div class="services-grid">
+        <article class="service"><div class="service-icon">▣</div><h3>Sites institucionais</h3><p>Apresente sua empresa, seus diferenciais e seus serviços com credibilidade e organização.</p></article>
+        <article class="service"><div class="service-icon">↗</div><h3>Landing pages</h3><p>Páginas estratégicas para divulgar campanhas, serviços e ofertas com chamadas para ação.</p></article>
+        <article class="service"><div class="service-icon">◇</div><h3>Vitrines e lojas virtuais</h3><p>Exiba seus produtos e facilite o contato e a jornada de compra dos seus clientes.</p></article>
+        <article class="service"><div class="service-icon">⌘</div><h3>Sites responsivos</h3><p>Layout adaptado para celular, tablet e computador, com navegação simples e agradável.</p></article>
+        <article class="service"><div class="service-icon">◎</div><h3>Identidade digital</h3><p>Uma apresentação visual consistente para transmitir profissionalismo em cada detalhe.</p></article>
+        <article class="service"><div class="service-icon">⚙</div><h3>Soluções sob medida</h3><p>Estruturas e funcionalidades planejadas conforme a necessidade do seu projeto.</p></article>
+      </div>
+    </div></section>
+    <section class="process" id="processo"><div class="wrap">
+      <div class="section-top"><div class="kicker">Simples do início ao lançamento</div><h2>Seu projeto, em quatro etapas.</h2><p>Um processo direto para transformar sua ideia em uma presença digital profissional.</p></div>
+      <div class="steps">
+        <article class="step"><div class="step-num">01 / CONVERSA</div><h3>Entendemos sua ideia</h3><p>Você conta sobre sua empresa, seu público e o que espera alcançar.</p></article>
+        <article class="step"><div class="step-num">02 / PLANEJAMENTO</div><h3>Desenhamos a solução</h3><p>Definimos estrutura, conteúdo e direção visual para o seu site.</p></article>
+        <article class="step"><div class="step-num">03 / DESENVOLVIMENTO</div><h3>Criamos seu site</h3><p>Construímos a experiência e ajustamos os detalhes do projeto.</p></article>
+        <article class="step"><div class="step-num">04 / PUBLICAÇÃO</div><h3>Seu negócio no ar</h3><p>Preparamos a publicação e orientamos você nos próximos passos.</p></article>
+      </div>
+    </div></section>
+    <section class="cta-section" id="contato"><div class="wrap"><div class="cta-panel"><div class="cta-content">
+      <div class="kicker">Chegou a hora de ascender</div>
+      <h2>Não deixe sua empresa invisível na internet. <em>Vamos mudar isso?</em></h2>
+      <p>Conte sua ideia para a Ascende Digital. Vamos conversar sobre um site profissional para apresentar sua marca, fortalecer sua presença e abrir novas oportunidades.</p>
+      <a class="btn" href="https://wa.me/5583993110329?text=Ol%C3%A1%21%20Quero%20um%20site%20profissional%20para%20minha%20empresa.%20Podemos%20conversar%3F" target="_blank" rel="noopener">CHAMAR A ASCENDE NO WHATSAPP <span>↗</span></a>
+      <div class="contact-line">Atendimento direto pelo WhatsApp: <a href="https://wa.me/5583993110329" target="_blank" rel="noopener">(83) 99311-0329</a></div>
+    </div></div></div></section>
+  </main>
+  <footer><div class="wrap">
+    <div class="footer-main"><div class="footer-logo"><img src="ascende.png" alt="Ascende Digital"><p>Criamos experiências digitais para marcas que querem se posicionar melhor, conquistar espaço e crescer.</p></div>
+      <div class="footer-links"><div class="footer-col"><b>NAVEGAÇÃO</b><a href="#inicio">Início</a><a href="#portfolio">Portfólio</a><a href="#servicos">Soluções</a></div><div class="footer-col"><b>FALE CONOSCO</b><a href="https://wa.me/5583993110329" target="_blank" rel="noopener">WhatsApp</a><a href="#contato">Solicitar orçamento</a></div></div>
+    </div>
+    <div class="copyright"><span>© <span id="year"></span> Ascende Digital. Todos os direitos reservados.</span><span>Sua marca merece crescer.</span></div>
+  </div></footer>
+  <a class="whatsapp-float" href="https://wa.me/5583993110329?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Ascende%20Digital%20e%20quero%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener" aria-label="Fale com a Ascende Digital pelo WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.12 0C5.58 0 .25 5.32.25 11.87c0 2.09.55 4.13 1.6 5.93L.15 24l6.35-1.66a11.9 11.9 0 0 0 5.62 1.43h.01c6.54 0 11.87-5.32 11.87-11.87 0-3.17-1.24-6.15-3.48-8.42ZM12.13 21.75a9.9 9.9 0 0 1-5.05-1.39l-.36-.21-3.77.99 1.01-3.67-.23-.38a9.84 9.84 0 0 1-1.51-5.22c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.12 1.03 6.98 2.9a9.82 9.82 0 0 1 2.9 6.99c0 5.45-4.44 9.88-9.87 9.88Zm5.42-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.5 1.7.64.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/></svg>
+  </a>
+
+  <!-- ===================== MODAL ===================== -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-window">
+      <div class="modal-chrome">
+        <div class="modal-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="modal-url">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span id="modalUrl">exemplo.com.br</span>
+        </div>
+        <button class="modal-close" id="modalClose" aria-label="Fechar prévia">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Conteúdo injetado via JS -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function toggleMenu(){
+      const menu = document.getElementById('menu');
+      const btn = document.querySelector('.menu-toggle');
+      const open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.textContent = open ? '✕' : '☰';
+    }
+    document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', () => {
+      document.getElementById('menu').classList.remove('open');
+      document.querySelector('.menu-toggle').setAttribute('aria-expanded', 'false');
+      document.querySelector('.menu-toggle').textContent = '☰';
+    }));
+
+    /* ===================== PORTFOLIO MODAL ===================== */
+    const projects = {
+      imob: {
+        url: 'verticeimoveis.com.br',
+        title: 'Vértice Imóveis',
+        html: `
+          <div class="mock-site site-imob">
+            <nav class="ms-nav">
+              <div class="ms-logo">VÉRTICE <span>IMÓVEIS</span></div>
+              <div class="ms-links"><span>Imóveis</span><span>Lançamentos</span><span>Sobre</span><span>Contato</span></div>
+              <div class="ms-cta">Falar com corretor</div>
+            </nav>
+            <section class="ms-hero">
+              <div>
+                <h1>Encontre o lugar para chamar de seu.</h1>
+                <p>Imóveis selecionados com cuidado para quem busca qualidade, localização e uma nova fase da vida.</p>
+                <div class="ms-btn">Explorar imóveis →</div>
+              </div>
+              <div class="ms-hero-card">
+                <div class="ms-hero-img">Destaque do mês</div>
+                <div class="ms-hero-info">
+                  <strong>Apartamento Garden — Jardins</strong>
+                  <span>3 suítes · 2 vagas · 185 m²</span>
+                  <div class="ms-price">R$ 1.890.000</div>
+                </div>
+              </div>
+            </section>
+            <section class="ms-section">
+              <h2>Imóveis em destaque</h2>
+              <p>Seleção especial com as melhores oportunidades do momento.</p>
+              <div class="ms-grid">
+                <div class="ms-card">
+                  <div class="ms-card-img"></div>
+                  <div class="ms-card-body">
+                    <strong>Cobertura Duplex</strong>
+                    <span>Moema · 4 suítes · 280 m²</span>
+                    <div class="ms-price">R$ 3.450.000</div>
+                  </div>
+                </div>
+                <div class="ms-card">
+                  <div class="ms-card-img t2"></div>
+                  <div class="ms-card-body">
+                    <strong>Casa Condomínio</strong>
+                    <span>Alphaville · 5 suítes · 420 m²</span>
+                    <div class="ms-price">R$ 4.200.000</div>
+                  </div>
+                </div>
+                <div class="ms-card">
+                  <div class="ms-card-img t3"></div>
+                  <div class="ms-card-body">
+                    <strong>Studio Premium</strong>
+                    <span>Vila Olímpia · 1 suíte · 48 m²</span>
+                    <div class="ms-price">R$ 680.000</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="ms-section" style="background:#faf8f4;padding-top:40px">
+              <h2>Por que a Vértice?</h2>
+              <p>Atendimento personalizado, curadoria rigorosa e transparência em cada etapa.</p>
+              <div class="ms-grid" style="grid-template-columns:repeat(3,1fr)">
+                <div class="ms-card" style="padding:22px;text-align:center">
+                  <strong style="font-size:22px;color:#b8860b">+12 anos</strong>
+                  <span style="display:block;margin-top:6px">de experiência no mercado</span>
+                </div>
+                <div class="ms-card" style="padding:22px;text-align:center">
+                  <strong style="font-size:22px;color:#b8860b">850+</strong>
+                  <span style="display:block;margin-top:6px">famílias atendidas</span>
+                </div>
+                <div class="ms-card" style="padding:22px;text-align:center">
+                  <strong style="font-size:22px;color:#b8860b">100%</strong>
+                  <span style="display:block;margin-top:6px">de acompanhamento jurídico</span>
+                </div>
+              </div>
+            </section>
+            <footer class="ms-footer">
+              <strong>Vértice Imóveis</strong>
+              Atendimento de segunda a sábado · WhatsApp (11) 99999-0000
+            </footer>
+          </div>
+        `
+      },
+      clinica: {
+        url: 'clinicaviva.com.br',
+        title: 'Clínica Viva',
+        html: `
+          <div class="mock-site site-clinica">
+            <nav class="ms-nav">
+              <div class="ms-logo">CLÍNICA VIVA</div>
+              <div class="ms-links"><span>Especialidades</span><span>Equipe</span><span>Estrutura</span><span>Contato</span></div>
+              <div class="ms-cta">Agendar consulta</div>
+            </nav>
+            <section class="ms-hero">
+              <h1>Cuidado e atenção em cada detalhe.</h1>
+              <p>Uma clínica pensada para oferecer acolhimento, tecnologia e profissionais qualificados em um só lugar.</p>
+              <div class="ms-btn">Agende sua consulta →</div>
+            </section>
+            <section class="ms-section">
+              <h2>Nossas especialidades</h2>
+              <p>Atendimento humanizado com foco no seu bem-estar completo.</p>
+              <div class="ms-grid">
+                <div class="ms-card">
+                  <div class="ms-icon">♡</div>
+                  <strong>Clínica Geral</strong>
+                  <span>Acompanhamento completo da sua saúde com foco em prevenção.</span>
+                </div>
+                <div class="ms-card">
+                  <div class="ms-icon">✦</div>
+                  <strong>Dermatologia</strong>
+                  <span>Cuidados estéticos e clínicos para a saúde da sua pele.</span>
+                </div>
+                <div class="ms-card">
+                  <div class="ms-icon">◎</div>
+                  <strong>Nutrição</strong>
+                  <span>Planos personalizados para uma vida mais equilibrada.</span>
+                </div>
+              </div>
+            </section>
+            <section class="ms-section" style="background:#f4faf8">
+              <h2>Como funciona</h2>
+              <p>Um caminho simples do primeiro contato até o acompanhamento.</p>
+              <div class="ms-grid">
+                <div class="ms-card">
+                  <strong style="font-size:20px;color:#0d625e">01</strong>
+                  <strong style="margin-top:8px">Agende online</strong>
+                  <span>Escolha o horário que preferir pelo site ou WhatsApp.</span>
+                </div>
+                <div class="ms-card">
+                  <strong style="font-size:20px;color:#0d625e">02</strong>
+                  <strong style="margin-top:8px">Consulta acolhedora</strong>
+                  <span>Atendimento com tempo e atenção para você.</span>
+                </div>
+                <div class="ms-card">
+                  <strong style="font-size:20px;color:#0d625e">03</strong>
+                  <strong style="margin-top:8px">Acompanhamento</strong>
+                  <span>Retornos e orientações contínuas da equipe.</span>
+                </div>
+              </div>
+            </section>
+            <section class="ms-cta-block">
+              <h2>Pronto para cuidar de você?</h2>
+              <p>Agende agora e dê o primeiro passo para uma vida com mais bem-estar.</p>
+              <div class="ms-btn">Quero agendar →</div>
+            </section>
+            <footer class="ms-footer">
+              Clínica Viva · Segunda a sábado · (11) 98888-0000
+            </footer>
+          </div>
+        `
+      },
+      loja: {
+        url: 'atelieaura.com.br',
+        title: 'Ateliê Aura',
+        html: `
+          <div class="mock-site site-loja">
+            <nav class="ms-nav">
+              <div class="ms-logo">ATELIÊ <span>AURA</span></div>
+              <div class="ms-links"><span>Coleção</span><span>Novidades</span><span>Sobre</span><span>Contato</span></div>
+              <div class="ms-cta">Ver coleção</div>
+            </nav>
+            <section class="ms-hero">
+              <h1>Feito para marcar <span>presença.</span></h1>
+              <p>Peças autorais com identidade forte. Uma vitrine digital para quem valoriza design e exclusividade.</p>
+              <div class="ms-btn">Explorar coleção →</div>
+            </section>
+            <section class="ms-section">
+              <h2>Destaques da coleção</h2>
+              <p>Seleção especial das peças mais desejadas.</p>
+              <div class="ms-grid">
+                <div class="ms-card">
+                  <div class="ms-card-img"></div>
+                  <div class="ms-card-body">
+                    <strong>Colar Aurora</strong>
+                    <span>Edição limitada · Prata 925</span>
+                    <div class="ms-price">R$ 289</div>
+                  </div>
+                </div>
+                <div class="ms-card">
+                  <div class="ms-card-img t2"></div>
+                  <div class="ms-card-body">
+                    <strong>Anel Cosmos</strong>
+                    <span>Peça exclusiva · Ouro 18k</span>
+                    <div class="ms-price">R$ 1.190</div>
+                  </div>
+                </div>
+                <div class="ms-card">
+                  <div class="ms-card-img t3"></div>
+                  <div class="ms-card-body">
+                    <strong>Brincos Éter</strong>
+                    <span>Design autoral · Prata</span>
+                    <div class="ms-price">R$ 340</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="ms-section" style="background:#fff">
+              <h2>A marca por trás das peças</h2>
+              <p style="max-width:480px;margin:0 auto 0;text-align:center;color:#666;font-size:14px;line-height:1.7">
+                Cada peça nasce de um processo artesanal, com atenção aos detalhes e uma identidade visual que se destaca.
+                O Ateliê Aura é para quem busca se expressar através do design.
+              </p>
+            </section>
+            <section class="ms-section" style="background:#1e1b2a;color:#fff;text-align:center">
+              <h2 style="color:#fff">Receba novidades em primeira mão</h2>
+              <p style="color:#a8a4b5;margin-bottom:20px">Cadastre-se e fique por dentro dos lançamentos.</p>
+              <div class="ms-btn">Quero me cadastrar →</div>
+            </section>
+            <footer class="ms-footer">
+              Ateliê Aura · Coleções limitadas · Instagram @atelieaura
+            </footer>
+          </div>
+        `
+      },
+      serv: {
+        url: 'altaperformance.com.br',
+        title: 'Alta Performance',
+        html: `
+          <div class="mock-site site-serv">
+            <nav class="ms-nav">
+              <div class="ms-logo">ALTA PERFORMANCE</div>
+              <div class="ms-links"><span>Serviços</span><span>Resultados</span><span>Sobre</span><span>Contato</span></div>
+              <div class="ms-cta">Solicitar proposta</div>
+            </nav>
+            <section class="ms-hero">
+              <div>
+                <h1>Seu próximo nível começa com ação.</h1>
+                <p>Soluções estratégicas para empresas que querem crescer com clareza, método e resultados mensuráveis.</p>
+                <div class="ms-btn">Quero uma proposta →</div>
+              </div>
+              <div class="ms-hero-visual">RESULTADOS REAIS</div>
+            </section>
+            <section class="ms-section">
+              <h2>O que entregamos</h2>
+              <p>Serviços pensados para gerar impacto real no seu negócio.</p>
+              <div class="ms-grid">
+                <div class="ms-card">
+                  <strong>Diagnóstico estratégico</strong>
+                  <span>Análise completa do cenário atual e oportunidades de crescimento.</span>
+                </div>
+                <div class="ms-card">
+                  <strong>Plano de ação</strong>
+                  <span>Roadmap claro com prioridades, prazos e métricas de sucesso.</span>
+                </div>
+                <div class="ms-card">
+                  <strong>Implementação</strong>
+                  <span>Acompanhamento próximo na execução das ações definidas.</span>
+                </div>
+                <div class="ms-card">
+                  <strong>Mensuração de resultados</strong>
+                  <span>Relatórios objetivos para você acompanhar a evolução.</span>
+                </div>
+              </div>
+            </section>
+            <section class="ms-cta-block">
+              <h2>Pronto para dar o próximo passo?</h2>
+              <p>Converse com a gente e descubra como podemos acelerar seus resultados.</p>
+              <div class="ms-btn">Solicitar proposta →</div>
+            </section>
+            <footer class="ms-footer">
+              Alta Performance · Consultoria estratégica · (11) 97777-0000
+            </footer>
+          </div>
+        `
+      }
+    };
+
+    const overlay = document.getElementById('modalOverlay');
+    const modalBody = document.getElementById('modalBody');
+    const modalUrl = document.getElementById('modalUrl');
+    const modalClose = document.getElementById('modalClose');
+
+    function openModal(key) {
+      const project = projects[key];
+      if (!project) return;
+      modalUrl.textContent = project.url;
+      modalBody.innerHTML = project.html;
+      modalBody.scrollTop = 0;
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Clique nos cards
+    document.querySelectorAll('.project').forEach(card => {
+      card.addEventListener('click', () => openModal(card.dataset.project));
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openModal(card.dataset.project);
+        }
+      });
+    });
+
+    // Fechar
+    modalClose.addEventListener('click', closeModal);
+    overlay.addEventListener('click', e => {
+      if (e.target === overlay) closeModal();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && overlay.classList.contains('active')) closeModal();
+    });
+  </script>
+</body>
+</html>
